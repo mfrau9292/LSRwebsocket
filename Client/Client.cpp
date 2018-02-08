@@ -21,11 +21,6 @@ along with QtWebsocket.  If not, see <http://www.gnu.org/licenses/>.
 #include "ui_Client.h"
 #include <QInputDialog>
 #include "viewer.h"
-#include "QtSql/QSqlDatabase"
-#include "qdebug.h"
-#include "QSqlError"
-#include "QSqlQuery"
-//#include "QtSql/
 
 Client::Client(QWidget *parent) :
 	QWidget(parent),
@@ -187,7 +182,6 @@ void Client::on_pbAdd_clicked()
 
 }
 
-
 void Client::on_pbSend_clicked()
 {
     wsSocket->write(userdata);
@@ -197,53 +191,4 @@ void Client::on_pbClear_clicked()
 {
     userdata.clear();
     ui->tePoints->setText("");
-}
-
-void Client::on_pbfromDB_clicked()
-{
-    //connetti a postgres
-    //prendi i dati
-    //costruisci userdata
-    //wsSocket->write(userdata);
-    int n=0;
-    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
-            db.setHostName("test");
-            db.setPort(5432);
-            db.setDatabaseName("test");
-            db.setUserName("postgres");
-            db.setPassword("sysadm");
-
-            if(db.open()==true)
-            {
-
-                qDebug() << "OK";
-                QSqlQuery query;
-                if(query.exec("SELECT x,y from data"))
-                {
-                    qDebug() << "query ok";
-                    while(query.next())
-                    {
-                        userdata+=(n>0)?"_":"";
-                        userdata+=query.value(0).toString();
-                        userdata+=",";
-                        userdata+=query.value(1).toString();
-                        ui->tePoints->setText(userdata);
-                        qDebug() << query.value(1).toInt(); //x prima colonna
-                        n++;
-
-                    }
-                }
-                else
-                    qDebug() << "query ko";
-            }
-            else
-            {
-                qDebug() << "NOK";
-                qDebug() <<db.lastError();
-            }
-            userdata="";
-            n=0;
-            db.close();
-
-
 }

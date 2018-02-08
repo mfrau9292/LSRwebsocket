@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\Server.o
+./release\lsr.o
+./release\QWsServer.o
+./release\QWsSocket.o
+./release\leastsquareregression.o
+./release\moc_Server.o
+./release\moc_QWsServer.o
+./release\moc_QWsSocket.o
+./release\moc_leastsquareregression.o
+);

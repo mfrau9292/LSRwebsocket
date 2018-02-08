@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\Server.o
+./debug\lsr.o
+./debug\QWsServer.o
+./debug\QWsSocket.o
+./debug\leastsquareregression.o
+./debug\moc_Server.o
+./debug\moc_QWsServer.o
+./debug\moc_QWsSocket.o
+./debug\moc_leastsquareregression.o
+);

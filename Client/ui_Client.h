@@ -39,6 +39,7 @@ public:
     QLineEdit *inx;
     QLineEdit *iny;
     QPushButton *pbClear;
+    QPushButton *pbfromDB;
 
     void setupUi(QWidget *Client)
     {
@@ -94,6 +95,9 @@ public:
         pbClear = new QPushButton(Client);
         pbClear->setObjectName(QStringLiteral("pbClear"));
         pbClear->setGeometry(QRect(500, 440, 75, 23));
+        pbfromDB = new QPushButton(Client);
+        pbfromDB->setObjectName(QStringLiteral("pbfromDB"));
+        pbfromDB->setGeometry(QRect(510, 20, 75, 23));
 
         retranslateUi(Client);
 
@@ -115,6 +119,7 @@ public:
         pbAdd->setText(QApplication::translate("Client", "ADD", 0));
         pbSend->setText(QApplication::translate("Client", "SEND", 0));
         pbClear->setText(QApplication::translate("Client", "CLEAR", 0));
+        pbfromDB->setText(QApplication::translate("Client", "fromDB", 0));
     } // retranslateUi
 
 };

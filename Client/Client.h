@@ -56,8 +56,6 @@ private slots:
 
     void on_pbClear_clicked();
 
-    void on_pbfromDB_clicked();
-
 private:
 	Ui::Client* ui;
 };

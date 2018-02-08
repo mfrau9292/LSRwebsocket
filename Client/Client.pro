@@ -5,7 +5,6 @@
 #-------------------------------------------------
 
 QT += core gui network
-QT += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -41,6 +40,3 @@ else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../qwt-6.1.3/lib/ -l
 
 INCLUDEPATH += $$PWD/../../qwt-6.1.3/src
 DEPENDPATH += $$PWD/../../qwt-6.1.3/src
-QT_DEBUG_PLUGINS=1
-
-

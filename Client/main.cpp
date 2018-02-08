@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	QApplication app(argc, argv);
 	
 	qsrand(QDateTime::currentMSecsSinceEpoch());
-
+    qputenv("QT_DEBUG_PLUGINS","1");
 	Client client;
 	client.show();
 
